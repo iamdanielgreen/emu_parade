@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="01_Emu Parade Project"
+config/name="Emu Parade"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -55,6 +55,11 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
