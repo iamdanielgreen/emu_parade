@@ -1,0 +1,18 @@
+narrator: Yo!
+label goBack (Go Back)
+narrator: What's up?
+[text_input var="response" placeholder="Type here." default="OK!"]
+if {response} == "...":
+	narrator: Uh... OK...
+	narrator: Maybe move on to characters...
+	[wait time="3.0"]
+	jump goBack
+if {response} == "making a video":
+	narrator: That is cool! I hope people like it!
+	narrator: So, what's next?
+	- Custom styles
+		narrator: Let's get custom!
+	- signals
+		[signal arg="it's a signal"]
+		narrator: Awesome! Signal Fired!
+		jump goBack
