@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1t1v5dqgywt" path="res://assets/01_Sprites/01_Characters/Character_Reference_Sheet.png" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bxplswnb6dvd1" path="res://scenes/player/player.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://duxjvj5hypno8" path="res://scenes/NPC/worker.tscn" id="7_4mrxx"]
-[ext_resource type="Script" uid="uid://jxcp45yirdc8" path="res://scripts/NPC/npc_worker.gd" id="8_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://buyxl18gjgk0o" path="res://scenes/NPC/other_worker.tscn" id="8_4mrxx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("1_nnsk1")
@@ -5885,4 +5885,6 @@ zoom = Vector2(2, 2)
 
 [node name="Worker" parent="." instance=ExtResource("7_4mrxx")]
 position = Vector2(648, 296)
-script = ExtResource("8_7r4gi")
+
+[node name="Other Worker" parent="." instance=ExtResource("8_4mrxx")]
+position = Vector2(184, 296)

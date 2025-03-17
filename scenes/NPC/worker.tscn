@@ -73,9 +73,10 @@ frame_progress = 0.540632
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_54lhc")
 
-[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+[node name="ConvoBubble" type="Area2D" parent="CollisionShape2D"]
 
-[node name="ConvoBubble" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/ConvoBubble"]
 shape = SubResource("CircleShape2D_bfdoy")
 
-[connection signal="body_entered" from="CollisionShape2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CollisionShape2D/ConvoBubble" to="." method="_on_convo_bubble_body_entered"]
+[connection signal="body_exited" from="CollisionShape2D/ConvoBubble" to="." method="_on_convo_bubble_body_exited"]
