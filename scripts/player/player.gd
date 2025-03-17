@@ -60,4 +60,4 @@ func _physics_process(delta: float) -> void:
 		#cassie_sprite.play("Walk_Up")
 	
 	
-	move_and_slide()
+	move_and_collide(velocity * delta)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=53 format=3 uid="uid://bxplswnb6dvd1"]
+[gd_scene load_steps=54 format=3 uid="uid://bxplswnb6dvd1"]
 
 [ext_resource type="Texture2D" uid="uid://dilx4gun0ir3v" path="res://assets/01_Sprites/01_Characters/Cassie_Test.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://bm0d2fq1y16o5" path="res://scripts/player/player.gd" id="1_dovo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(32, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -382,17 +385,27 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8afob"]
-radius = 32.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
+radius = 37.1214
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_dovo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_qek5x")
-animation = &"Walk_Down"
+animation = &"Idle"
 autoplay = "Idle"
+frame = 5
+frame_progress = 0.718346
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8afob")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="ConvoBubble" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_gmlin")

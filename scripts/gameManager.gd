@@ -4,8 +4,10 @@ var paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.signal_event.connect(_on_dialogic_signal)
-	Dialogic.start("tutorial_timeline")
+	pass
+	#TODO: Remove tutorial code
+	#Dialogic.signal_event.connect(_on_dialogic_signal)
+	#Dialogic.start("tutorial_timeline")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +23,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
-func _on_dialogic_signal(argument: String):
-	if argument == "it's a signal":
-		print("A signal was fired via Dialogic")
+#TODO: Remove tutorial code
+#func _on_dialogic_signal(argument: String):
+	#if argument == "it's a signal":
+		#print("A signal was fired via Dialogic")
