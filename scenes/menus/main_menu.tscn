@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bt8iqaqjwajh2"]
+[gd_scene load_steps=8 format=3 uid="uid://bt8iqaqjwajh2"]
 
 [ext_resource type="Script" uid="uid://qpgjj4540pxt" path="res://scripts/menus/main_menu.gd" id="1_ng0o5"]
 [ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="2_8r73w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ggrwqr7kyqfk" path="res://assets/04_Menu Slides/EP_MainMenu.png" id="4_50h1w"]
 [ext_resource type="Texture2D" uid="uid://cmwytat56um43" path="res://assets/04_Menu Slides/EP_Menu_TempCredits.png" id="5_ng0o5"]
 [ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="6_bre17"]
+[ext_resource type="PackedScene" uid="uid://bl2n0006hn1et" path="res://scenes/levels/scene_transition.tscn" id="7_8r73w"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -102,6 +103,8 @@ offset_bottom = 40.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_bre17")]
 visible = false
+
+[node name="SceneTransition" parent="." instance=ExtResource("7_8r73w")]
 
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/Credits" to="." method="_on_credits_pressed"]
