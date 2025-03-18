@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl8hukdlbh61f"]
+
+[ext_resource type="Script" uid="uid://dhbk5j6yxjka4" path="res://scripts/menus/pause_menu.gd" id="1_7unhi"]
+[ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="1_r2nfd"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_7unhi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -120.5
+offset_right = 202.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="paused_text" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r2nfd")
+theme_override_font_sizes/font_size = 100
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="resume_button" type="Button" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r2nfd")
+theme_override_font_sizes/font_size = 45
+text = "Resume"
+
+[node name="main_menu_button" type="Button" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r2nfd")
+theme_override_font_sizes/font_size = 45
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/main_menu_button" to="." method="_on_main_menu_button_pressed"]

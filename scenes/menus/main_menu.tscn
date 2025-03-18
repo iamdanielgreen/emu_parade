@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt8iqaqjwajh2"]
+[gd_scene load_steps=7 format=3 uid="uid://bt8iqaqjwajh2"]
 
 [ext_resource type="Script" uid="uid://qpgjj4540pxt" path="res://scripts/menus/main_menu.gd" id="1_ng0o5"]
 [ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="2_8r73w"]
 [ext_resource type="Script" uid="uid://bvl8x3wt85lle" path="res://scripts/menus/main_menu_buttons.gd" id="3_1hnlc"]
 [ext_resource type="Texture2D" uid="uid://ggrwqr7kyqfk" path="res://assets/04_Menu Slides/EP_MainMenu.png" id="4_50h1w"]
-[ext_resource type="Texture2D" uid="uid://dobcik0xdf3tj" path="res://assets/04_Menu Slides/EP_Menu_Credits.png" id="5_euy4r"]
+[ext_resource type="Texture2D" uid="uid://cmwytat56um43" path="res://assets/04_Menu Slides/EP_Menu_TempCredits.png" id="5_ng0o5"]
+[ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="6_bre17"]
 
-[node name="Menu_UI" type="Control"]
+[node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,13 +92,16 @@ alignment = 0
 [node name="Credits_BG" type="Sprite2D" parent="Credits"]
 z_index = -1
 position = Vector2(960, 540)
-texture = ExtResource("5_euy4r")
+texture = ExtResource("5_ng0o5")
 
 [node name="Feedback" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_bre17")]
+visible = false
 
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/Credits" to="." method="_on_credits_pressed"]
