@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://djqkilxf2nkf8"]
+
+[ext_resource type="Script" uid="uid://u31qqlhdp76g" path="res://scripts/menus/wip_slide.gd" id="1_a4460"]
+[ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="2_pbpn1"]
+[ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="4_41vsc"]
+
+[node name="WIP_Slide" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4460")
+
+[node name="TitleScreen" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.5
+offset_top = -243.0
+offset_right = 678.5
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WIP_text" type="Label" parent="TitleScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pbpn1")
+theme_override_font_sizes/font_size = 72
+text = "Emu Parade is a work in development.
+
+Gameplay, artwork and sounds may not
+reflect the final version of the game.
+"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="TitleScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_pbpn1")
+theme_override_font_sizes/font_size = 72
+text = "Continue"
+
+[node name="BlackBG" type="ColorRect" parent="TitleScreen"]
+z_index = -1
+offset_left = -129.0
+offset_top = -106.0
+offset_right = 2072.0
+offset_bottom = 1205.0
+color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_41vsc")]
+visible = false
+
+[connection signal="pressed" from="TitleScreen/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

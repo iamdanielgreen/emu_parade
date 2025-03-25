@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt8iqaqjwajh2"]
+[gd_scene load_steps=4 format=3 uid="uid://bt8iqaqjwajh2"]
 
 [ext_resource type="Script" uid="uid://qpgjj4540pxt" path="res://scripts/menus/main_menu.gd" id="1_ng0o5"]
 [ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="2_8r73w"]
-[ext_resource type="Script" uid="uid://bvl8x3wt85lle" path="res://scripts/menus/main_menu_buttons.gd" id="3_1hnlc"]
-[ext_resource type="Texture2D" uid="uid://ggrwqr7kyqfk" path="res://assets/04_Menu Slides/EP_MainMenu.png" id="4_50h1w"]
 [ext_resource type="Texture2D" uid="uid://cmwytat56um43" path="res://assets/04_Menu Slides/EP_Menu_TempCredits.png" id="5_ng0o5"]
-[ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="6_bre17"]
-[ext_resource type="PackedScene" uid="uid://bl2n0006hn1et" path="res://scenes/levels/scene_transition.tscn" id="7_8r73w"]
 
 [node name="Main Menu" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,16 +14,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ng0o5")
 
-[node name="TitleScreen" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TitleScreen" type="CanvasLayer" parent="."]
+
+[node name="EmuParade_Text" type="Label" parent="TitleScreen"]
+offset_left = 75.0
+offset_top = 22.0
+offset_right = 1589.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("2_8r73w")
+theme_override_font_sizes/font_size = 225
+text = "EMU PARADE"
+
+[node name="Name_Text" type="Label" parent="TitleScreen/EmuParade_Text"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 218.0
+offset_right = 1281.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("2_8r73w")
+theme_override_font_sizes/font_size = 72
+text = "A game prototype by Daniel Green"
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="TitleScreen"]
-layout_mode = 0
 offset_left = 96.0
 offset_top = 425.0
 offset_right = 733.0
@@ -39,7 +48,6 @@ theme_override_fonts/font = ExtResource("2_8r73w")
 theme_override_font_sizes/font_size = 72
 text = "Start Game"
 alignment = 0
-script = ExtResource("3_1hnlc")
 
 [node name="Credits" type="Button" parent="TitleScreen/MainMenuButtons"]
 layout_mode = 2
@@ -67,18 +75,21 @@ theme_override_font_sizes/font_size = 72
 text = "Quit"
 alignment = 0
 
-[node name="TitleScreen_BG" type="Sprite2D" parent="TitleScreen"]
+[node name="BlackBG" type="ColorRect" parent="TitleScreen"]
 z_index = -1
-position = Vector2(960, 540)
-texture = ExtResource("4_50h1w")
+offset_left = -129.0
+offset_top = -106.0
+offset_right = 2072.0
+offset_bottom = 1205.0
+color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="CreditsBackButton" type="Button" parent="Credits"]
+z_index = 1
 layout_mode = 2
 offset_left = 96.0
 offset_top = 900.0
@@ -100,11 +111,6 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="PauseMenu" parent="." instance=ExtResource("6_bre17")]
-visible = false
-
-[node name="SceneTransition" parent="." instance=ExtResource("7_8r73w")]
 
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/Credits" to="." method="_on_credits_pressed"]

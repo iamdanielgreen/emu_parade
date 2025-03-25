@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyn3ybw58rl1i"]
+
+[ext_resource type="Texture2D" uid="uid://u22d7w6cuql6" path="res://assets/01_Sprites/03_Items/Trash.png" id="1_lcprm"]
+[ext_resource type="Script" uid="uid://b5n67wpbq04by" path="res://scripts/items/item_test.gd" id="2_ik3kg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcprm"]
+radius = 32.0
+
+[node name="rubbish" type="Sprite2D"]
+texture = ExtResource("1_lcprm")
+script = ExtResource("2_ik3kg")
+
+[node name="CollectRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectRadius"]
+shape = SubResource("CircleShape2D_lcprm")
+
+[connection signal="body_entered" from="CollectRadius" to="." method="_on_collect_radius_body_entered"]
+[connection signal="body_exited" from="CollectRadius" to="." method="_on_collect_radius_body_exited"]
