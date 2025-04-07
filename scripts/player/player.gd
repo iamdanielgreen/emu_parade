@@ -1,11 +1,21 @@
 extends CharacterBody2D
+class_name Player #NOTE: THIS CONNECTS TO THE PAUSE MENU, SO THAT YOU CAN STOP CASSIE MOVING WHEN THE GAME IS PAUSED.
 
 @onready var cassie_sprite = $AnimatedSprite2D
+@onready var interact_ui: CanvasLayer = $InteractUI
+@onready var inventory_ui: CanvasLayer = $InventoryUI
 
 const SPEED = 175.0 # Default is 300. 150 too slow, 200 too fast.
+var paused = false
+
+func _ready() -> void:
+	#Set this node as the Player node
+	GameManager.set_player_reference(self)
 
 func _physics_process(delta: float) -> void:
-	
+	if paused:
+		return
+		
 	if Input.is_action_pressed("move_right"):
 		# Move as long as the key/button is pressed.
 		position.x += SPEED * delta
@@ -28,39 +38,16 @@ func _physics_process(delta: float) -> void:
 			cassie_sprite.play("Idle_Up")
 		elif Input.is_action_just_released("move_down"):
 			cassie_sprite.play("Idle")
-		
-	
-	
-	##Player Movement
-	#var direction_x := Input.get_axis("walk_left", "walk_right")
-	#if direction_x:
-		#velocity.x = direction_x * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#
-	#var direction_y := Input.get_axis("walk_up", "walk_down")
-	#if direction_y:
-		#velocity.y = direction_y * SPEED
-	#else:
-		#velocity.y = move_toward(velocity.y, 0, SPEED)
-		#
-	##Player Animations
-	#if direction_x > 0.0:
-		#cassie_sprite.play("Walk_Right")
-	#elif direction_x < 0.0:
-		#cassie_sprite.play("Walk_Left")
-	#
-	#if direction_x and direction_y == 0.0:
-		#cassie_sprite.play("idle")
-#
-	#
-	#if direction_y > 0.0:
-		#cassie_sprite.play("Walk_Down")
-	#elif direction_y < 0.0:
-		#cassie_sprite.play("Walk_Up")
-	
-	
+			
 	move_and_collide(velocity * delta)
 	
+func _input(event):
+	if event.is_action_pressed("inventory"):
+		inventory_ui.visible = !inventory_ui.visible 
+		#NOTE: THIS TYPE OF THING IS A FLIP-FLOP. PRESSING THE E KEY DOES THE OPPOSITE OF WHATEVER IS ACTIVE.
+		#get_tree().paused = !get_tree().paused #NOTE: DISABLED BECAUSE IT WAS CAUSING WEIRDNESS.
+		#NOTE: PROCESS HAS BEEN SET TO ALWAYS, DOES THIS MEAN CASSIE CAN STILL MOVE WHILST PAUSED?
+		#NOTE: SHORT ANSWER IS YES. MAYBE THAT'S OK?
+
 func player():
 	pass
