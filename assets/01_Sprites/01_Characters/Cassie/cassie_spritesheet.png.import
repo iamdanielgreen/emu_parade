@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dilx4gun0ir3v"
-path="res://.godot/imported/Cassie_Test.png-c9f9889ac04245e287b9ed98bbdb93ed.ctex"
+uid="uid://6y6pmowftg3p"
+path="res://.godot/imported/cassie_spritesheet.png-9f4bf1809f886a5e3011666252966d2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/01_Sprites/01_Characters/Cassie_Test.png"
-dest_files=["res://.godot/imported/Cassie_Test.png-c9f9889ac04245e287b9ed98bbdb93ed.ctex"]
+source_file="res://assets/01_Sprites/01_Characters/Cassie/cassie_spritesheet.png"
+dest_files=["res://.godot/imported/cassie_spritesheet.png-9f4bf1809f886a5e3011666252966d2e.ctex"]
 
 [params]
 

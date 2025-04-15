@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=4 uid="uid://4rafiq2ovw24"]
+[gd_scene load_steps=13 format=4 uid="uid://4rafiq2ovw24"]
 
+[ext_resource type="Script" uid="uid://hunpghankndc" path="res://scripts/levels/world.gd" id="1_dp8al"]
 [ext_resource type="Texture2D" uid="uid://2v3qemmv6b28" path="res://assets/01_Sprites/02_Terrain/Terrains_and_Fences_32x32.png" id="2_f1v6p"]
 [ext_resource type="Texture2D" uid="uid://cetfrg5tdir0c" path="res://assets/01_Sprites/02_Terrain/City_Terrains_32x32.png" id="3_dp8al"]
 [ext_resource type="PackedScene" uid="uid://bxplswnb6dvd1" path="res://scenes/player/player.tscn" id="6_xidr1"]
 [ext_resource type="PackedScene" uid="uid://duxjvj5hypno8" path="res://scenes/NPC/worker.tscn" id="7_8c33x"]
-[ext_resource type="Script" uid="uid://bq7fhlp7pj7o" path="res://scripts/ui/ui.gd" id="8_csbb7"]
+[ext_resource type="PackedScene" uid="uid://xi8n8o0n35i1" path="res://scenes/items/test_bin.tscn" id="8_dp8al"]
 [ext_resource type="PackedScene" uid="uid://buyxl18gjgk0o" path="res://scenes/NPC/other_worker.tscn" id="8_y40x4"]
-[ext_resource type="PackedScene" uid="uid://xi8n8o0n35i1" path="res://scenes/items/inventory_item.tscn" id="9_csbb7"]
 [ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="9_f1v6p"]
-[ext_resource type="PackedScene" uid="uid://dyn3ybw58rl1i" path="res://scenes/items/rubbish_test.tscn" id="10_csbb7"]
-[ext_resource type="Texture2D" uid="uid://b1kl4sso3b2nn" path="res://assets/01_Sprites/03_Items/InventoryTutorial/Items/Rubbish Bag.png" id="10_mmplq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("2_f1v6p")
@@ -5248,7 +5246,11 @@ terrain_set_0/terrain_1/color = Color(1, 1, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_rwgxs")
 sources/1 = SubResource("TileSetAtlasSource_f1v6p")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lift"]
+size = Vector2(500, 500)
+
 [node name="World" type="Node2D"]
+script = ExtResource("1_dp8al")
 
 [node name="Terrain" type="Node" parent="."]
 
@@ -5267,6 +5269,11 @@ position = Vector2(416, 296)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+editor_draw_limits = true
 
 [node name="Worker" parent="." instance=ExtResource("7_8c33x")]
 position = Vector2(648, 296)
@@ -5274,16 +5281,19 @@ position = Vector2(648, 296)
 [node name="Other Worker" parent="." instance=ExtResource("8_y40x4")]
 position = Vector2(184, 296)
 
-[node name="rubbish" parent="." instance=ExtResource("10_csbb7")]
-position = Vector2(864, 360)
-
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("8_csbb7")
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("9_f1v6p")]
 visible = false
 
-[node name="InventoryItem" parent="." instance=ExtResource("9_csbb7")]
-position = Vector2(344, 456)
-item_texture = ExtResource("10_mmplq")
+[node name="Items" type="Node2D" parent="."]
+
+[node name="ItemSpawnArea" type="Area2D" parent="."]
+position = Vector2(1320, 448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSpawnArea"]
+shape = SubResource("RectangleShape2D_0lift")
+
+[node name="TestBin" parent="." instance=ExtResource("8_dp8al")]
+position = Vector2(288, 504)

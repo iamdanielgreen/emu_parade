@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=3 uid="uid://bxplswnb6dvd1"]
 
-[ext_resource type="Texture2D" uid="uid://dilx4gun0ir3v" path="res://assets/01_Sprites/01_Characters/Cassie_Test.png" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://6y6pmowftg3p" path="res://assets/01_Sprites/01_Characters/Cassie/cassie_spritesheet.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://bm0d2fq1y16o5" path="res://scripts/player/player.gd" id="1_dovo2"]
 [ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://3e16tahk0gh" path="res://scenes/ui/inventory_ui.tscn" id="4_lvxji"]
@@ -385,6 +385,11 @@ animations = [{
 "loop": true,
 "name": &"Walk_Up",
 "speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
@@ -404,8 +409,6 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_qek5x")
 animation = &"Idle"
 autoplay = "Idle"
-frame = 5
-frame_progress = 0.718346
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -1)

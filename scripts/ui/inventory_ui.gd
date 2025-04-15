@@ -9,8 +9,16 @@ func _ready() -> void:
 	_on_inventory_updated()
 	
 #Update Inventory UI
-func _on_inventory_updated(): #NOTE: UNDERSCORE AT FRONT DENOTES FUNCTION CONNECTS TO SIGNAL
+func _on_inventory_updated(): #NOTE: UNDERSCORE AT FRONT MEANS FUNCTION CONNECTS TO SIGNAL, MAYBE?
 	clear_grid_container()
+	#Add slots for each inventory position
+	for item in GameManager.inventory:
+		var slot = GameManager.inventory_slot_scene.instantiate()
+		grid_container.add_child(slot)
+		if item != null:
+			slot.set_item(item)
+		else:
+			slot.set_empty()
 	
 #Clear Inventory UI grid
 func clear_grid_container():

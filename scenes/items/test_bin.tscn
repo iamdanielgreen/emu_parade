@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://xi8n8o0n35i1"]
+
+[ext_resource type="Texture2D" uid="uid://csvppmt5uyr21" path="res://assets/01_Sprites/03_Items/InventoryTutorial/Items/Brown Boots.png" id="1_hb0o6"]
+[ext_resource type="Script" uid="uid://tnsle48emgv" path="res://scripts/items/test_bin.gd" id="1_tls70"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5oyo"]
+radius = 30.0
+
+[node name="TestBin" type="Node2D" groups=["Items"]]
+script = ExtResource("1_tls70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_hb0o6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_a5oyo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

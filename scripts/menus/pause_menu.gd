@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var pause_menu: CanvasLayer = $"."
 @onready var player: Player = $"../../Player"
 
+
 var paused = false
 
 func _process(delta):
