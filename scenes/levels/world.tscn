@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://2v3qemmv6b28" path="res://assets/01_Sprites/02_Terrain/Terrains_and_Fences_32x32.png" id="2_f1v6p"]
 [ext_resource type="Texture2D" uid="uid://cetfrg5tdir0c" path="res://assets/01_Sprites/02_Terrain/City_Terrains_32x32.png" id="3_dp8al"]
 [ext_resource type="PackedScene" uid="uid://bxplswnb6dvd1" path="res://scenes/player/player.tscn" id="6_xidr1"]
-[ext_resource type="PackedScene" uid="uid://duxjvj5hypno8" path="res://scenes/NPC/worker.tscn" id="7_8c33x"]
+[ext_resource type="PackedScene" uid="uid://duxjvj5hypno8" path="res://scenes/NPCs/worker.tscn" id="7_8c33x"]
 [ext_resource type="PackedScene" uid="uid://xi8n8o0n35i1" path="res://scenes/items/test_bin.tscn" id="8_dp8al"]
-[ext_resource type="PackedScene" uid="uid://buyxl18gjgk0o" path="res://scenes/NPC/other_worker.tscn" id="8_y40x4"]
+[ext_resource type="PackedScene" uid="uid://buyxl18gjgk0o" path="res://scenes/NPCs/other_worker.tscn" id="8_y40x4"]
 [ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="9_f1v6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
