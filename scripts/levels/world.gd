@@ -4,11 +4,16 @@ extends Node2D
 @onready var items: Node2D = $Items
 @onready var item_spawn_area: Area2D = $ItemSpawnArea
 @onready var spawn_collision_shape: CollisionShape2D = $ItemSpawnArea/CollisionShape2D
+@onready var player: Player = $Player
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_random_items(10)
+	
+func _process(delta: float) -> void:
+	player.visible = true
+	change_scene()
 
 #Get random position for item within the collision shape in spawn area
 func get_random_position():
@@ -34,3 +39,22 @@ func spawn_item(data, position):
 	item_instance.initiate_items(data["type"], data["name"], data["effect"], data["texture"])
 	item_instance.global_position = position
 	items.add_child(item_instance)
+
+
+func _on_world_level_gate_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		GameManager.transition_scene = true
+		print("YOU SHOULD BE SWITCHING NOW.")
+
+
+func _on_world_level_gate_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		GameManager.transition_scene = false
+		print("YOU WON'T BE SWITCHING NOW.")
+
+func change_scene():
+	if GameManager.transition_scene == true:
+		if GameManager.current_scene == "world":
+			get_tree().change_scene_to_file("res://scenes/levels/level_01_bedroom.tscn") #TODO: JUST A TEST
+			#get_tree().change_scene_to_file("res://scenes/levels/level_02_livingroom.tscn")
+			GameManager.transition_scene_end()

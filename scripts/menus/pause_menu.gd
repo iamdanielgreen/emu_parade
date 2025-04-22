@@ -23,9 +23,9 @@ func pauseMenu():
 		player.paused = true
 		get_tree().paused = true
 		
-	paused = !paused #TODO: Someone needs to explain to you what this means. #NOTE 06/04/25: YOU NOW KNOW THIS IS A FLIP-FLOP.
+	paused = !paused #TODO: Someone needs to explain to you what this means. 
+	#NOTE 06/04/25: YOU NOW KNOW THIS IS A FLIP-FLOP.
 	
-
 
 func _on_resume_button_pressed() -> void:
 	pauseMenu()

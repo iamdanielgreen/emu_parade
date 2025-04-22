@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://4rafiq2ovw24"]
+[gd_scene load_steps=14 format=4 uid="uid://4rafiq2ovw24"]
 
 [ext_resource type="Script" uid="uid://hunpghankndc" path="res://scripts/levels/world.gd" id="1_dp8al"]
 [ext_resource type="Texture2D" uid="uid://2v3qemmv6b28" path="res://assets/01_Sprites/02_Terrain/Terrains_and_Fences_32x32.png" id="2_f1v6p"]
@@ -5249,6 +5249,9 @@ sources/1 = SubResource("TileSetAtlasSource_f1v6p")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lift"]
 size = Vector2(500, 500)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp8al"]
+size = Vector2(104, 64)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_dp8al")
 
@@ -5297,3 +5300,14 @@ shape = SubResource("RectangleShape2D_0lift")
 
 [node name="TestBin" parent="." instance=ExtResource("8_dp8al")]
 position = Vector2(288, 504)
+
+[node name="World_Level_Gate" type="Area2D" parent="."]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World_Level_Gate"]
+z_index = 2
+position = Vector2(868, 224)
+shape = SubResource("RectangleShape2D_dp8al")
+
+[connection signal="body_entered" from="World_Level_Gate" to="." method="_on_world_level_gate_body_entered"]
+[connection signal="body_exited" from="World_Level_Gate" to="." method="_on_world_level_gate_body_exited"]

@@ -1,7 +1,18 @@
 #NOTE: Incorporates code from Oops, I Dev'd (https://youtu.be/wLWs6KTsLIE)
+#TODO: AND DEVWORM BUT YOU HAVEN'T ADDED THE LINK YET.
 
-# TODO: HAVE YOU SET THIS AS A GLOBAL, DANIEL?
 extends Node
+
+var current_scene = "level_01_bedroom"
+var transition_scene = false
+
+#NOTE: COULD THIS LIVE IN LEVEL MANAGER? YES, PROBABLY.
+var player_exit_bedroom_posx = 1100
+var player_exit_bedroom_posy = 555
+var player_awake_bedroom_posx = 1015
+var player_awake_bedroom_posy = 390
+
+var game_loadin = true
 
 #Inventory items
 var inventory = []
@@ -25,6 +36,16 @@ var player_node: Node = null
 func _ready() -> void:
 	#Initialises the inventory with 30 slots (spread over 9 slots per row)
 	inventory.resize(30) #NOTE: TUTORIAL SETS THIS AT 30
+
+
+#NOTE: THIS POTENTIALLY SOLVES YOUR CASSIE MOVING PROBLEM.
+func transition_scene_end():
+	if transition_scene == true:
+		transition_scene = false
+		if current_scene == "level_01_bedroom":
+			current_scene = "level_02_livingroom"
+		else:
+			current_scene = "level_01_bedroom"
 
 #Adds item to the inventory, returns true if successful
 func add_item(item):

@@ -385,11 +385,6 @@ animations = [{
 "loop": true,
 "name": &"Walk_Up",
 "speed": 8.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"sleeping",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
@@ -407,7 +402,7 @@ shape = SubResource("RectangleShape2D_dovo2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_qek5x")
-animation = &"Idle"
+animation = &"Idle_Right"
 autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="."]

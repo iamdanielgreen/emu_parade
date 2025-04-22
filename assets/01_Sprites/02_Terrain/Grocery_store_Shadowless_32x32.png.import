@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chveeb1ujh4yw"
-path="res://.godot/imported/animated_TV_reportage_32x32.png-8524eecccf29dc0f66b72daed21986d2.ctex"
+uid="uid://bjmtvjv22h8jp"
+path="res://.godot/imported/Grocery_store_Shadowless_32x32.png-ff1d85f31bd364dcd5b3e1b0b3638211.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/01_Sprites/02_Terrain/TV News/animated_TV_reportage_32x32.png"
-dest_files=["res://.godot/imported/animated_TV_reportage_32x32.png-8524eecccf29dc0f66b72daed21986d2.ctex"]
+source_file="res://assets/01_Sprites/02_Terrain/Grocery_store_Shadowless_32x32.png"
+dest_files=["res://.godot/imported/Grocery_store_Shadowless_32x32.png-ff1d85f31bd364dcd5b3e1b0b3638211.ctex"]
 
 [params]
 

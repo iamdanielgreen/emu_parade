@@ -3,3 +3,55 @@ Running Credits List
 Narrative, Game Design, Audio - Daniel Green
 Artwork - "Modern Interiors" and "Modern Exteriors" by LimeZu (https://limezu.itch.io/), and "Character Creator 2.0" by LegendarySwordsman2 (https://legendaryswordsman2.itch.io/)
 Narrative Consultation - Kate Byrne, Stephen Fox
+
+
+
+18/04/2025
+
+- At some point you killed the Quit Game button
+- changed opening scene to cassie's bedroom
+- removed reminder to set gamemanager as global
+- created cassie_sleeping character
+- got cassie to wake up and make the bed (she should be on the other side though)
+- something is causing her to be invisible when loading into new world, but heck it.
+- - as ONE MORE THING, had cassie load in to living room
+- - - Which worked, except you basically need cassie to have visibility always turned on at the start of a new level because you currently can't see her.
+
+WHEN WAS THE LAST TIME YOU DID A BUILD, BRUH.
+
+19/04/2025
+
+- THING TO ADD: All items float on first interact. Turn float off/make idle once interacted with.
+- THING TO ADD: Phone shows PRESS X to interact on first approach. Hide UI [interact_ui.hide()] once that occurs.
+- THING TO ADD: Thing floats on first approach, then gets interact icon once they enter InteractZone.
+
+- Made notes for post mortem
+- did not make cassie be consistently visible - have to do it manually
+- worked on living room/kitchen
+
+20/04/2025
+
+- really tried to make some music. Made a sketch for the world theme that you liked.
+- Worked on living room while watching a film.
+- Added details to bedroom
+- Added Cassie sleeping animation (or made it work, anyway)
+- Fixed wall ordering things in livingroom
+- Replaced kitchen assets with shadowless tileset, thus breaking the existing kitchen which you then fixed.
+- Finished bedroom. Pretty sure I did, anyway.
+- Mostly finished living room
+- - Though none of the borders are in place, so she can walk through everything.
+
+21/04/2025
+- Made two pieces of music (and one piece of credits music)
+- - Cassie is sleeping / Cassie is awake
+- - Welcome to Emu Parade
+- - Welcome to Emu Parade (We Hope You Visit Again Soon! Mix)
+- Went back to furnishing living room
+- - Need to work out the physics layer situation
+- Created TV item based on phone scene
+- - Created TV sprite
+- - Deleted "TV news sprites from project"
+- - finished tv scene
+- - - started to fix script from phone to tv
+
+

@@ -19,23 +19,31 @@ config/icon="res://icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameManager="*res://scripts/gameManager.gd"
+LevelManager="*res://scripts/levels/level_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "cassie": "res://assets/02_Dialogic Files/02_Characters/cassie.dch",
+"feedr": "res://assets/02_Dialogic Files/02_Characters/feedr.dch",
 "narrator": "res://assets/02_Dialogic Files/02_Characters/narrator.dch",
 "other_worker": "res://assets/02_Dialogic Files/02_Characters/other_worker.dch",
 "phone": "res://assets/02_Dialogic Files/02_Characters/phone.dch",
+"signet": "res://assets/02_Dialogic Files/02_Characters/signet.dch",
 "worker": "res://assets/02_Dialogic Files/02_Characters/worker.dch"
 }
 directories/dtl_directory={
 "01_01_PhoneAlarm": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/01_01_PhoneAlarm.dtl",
+"01_02_DadMessage": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/01_02_DadMessage.dtl",
 "meet_bob": "res://assets/02_Dialogic Files/01_Timelines/other_worker/meet_bob.dtl",
 "random_0": "res://assets/02_Dialogic Files/01_Timelines/other_worker/random_0.dtl",
 "random_1": "res://assets/02_Dialogic Files/01_Timelines/other_worker/random_1.dtl",
 "random_2": "res://assets/02_Dialogic Files/01_Timelines/other_worker/random_2.dtl",
 "random_3": "res://assets/02_Dialogic Files/01_Timelines/other_worker/random_3.dtl",
+"random_phone_1": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/random_phone_1.dtl",
+"random_phone_2": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/random_phone_2.dtl",
+"random_phone_3": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/random_phone_3.dtl",
+"random_phone_4": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/random_phone_4.dtl",
 "tutorial_timeline": "res://assets/02_Dialogic Files/tutorial_timeline.dtl",
 "worker": "res://assets/02_Dialogic Files/01_Timelines/worker.dtl"
 }

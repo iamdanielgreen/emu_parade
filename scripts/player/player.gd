@@ -4,6 +4,7 @@ class_name Player #NOTE: THIS CONNECTS TO THE PAUSE MENU, SO THAT YOU CAN STOP C
 @onready var cassie_sprite = $AnimatedSprite2D
 @onready var interact_ui: CanvasLayer = $InteractUI
 @onready var inventory_ui: CanvasLayer = $InventoryUI
+@onready var bed_sleeping: TileMapLayer = $"../TileLayers/Bed/BedSleeping"
 @onready var test_bin: Node2D = $"../TestBin"
 
 #@onready var inventory_item: Button = $ItemButton #NOTE: NOT PRESENTLY CALLED.
@@ -12,12 +13,23 @@ const SPEED = 175.0 # Default is 300. 150 too slow, 200 too fast.
 var paused = false
 var item = null
 var hold_key = false
+var awake = false
 
 func _ready() -> void:
 	#Set this node as the Player node
 	GameManager.set_player_reference(self)
 
 func _physics_process(delta: float) -> void:
+	if awake:
+		visible = true
+		#NOTE: THIS DOESN'T WORK THE WAY YOU WANT IT TO, AND YOU DON'T KNOW WHY.
+		if GameManager.current_scene == "level_01_bedroom":
+			bed_sleeping.visible = false
+		else:
+			return
+	else:
+		visible = false
+	
 	if paused:
 		return
 		
@@ -44,7 +56,6 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_just_released("move_down"):
 			cassie_sprite.play("Idle")
 	
-			
 	move_and_collide(velocity * delta)
 	
 func _input(event):
@@ -54,6 +65,8 @@ func _input(event):
 		#get_tree().paused = !get_tree().paused #NOTE: DISABLED BECAUSE IT WAS CAUSING WEIRDNESS.
 		#NOTE: PROCESS HAS BEEN SET TO ALWAYS, DOES THIS MEAN CASSIE CAN STILL MOVE WHILST PAUSED?
 		#NOTE: SHORT ANSWER IS YES. MAYBE THAT'S OK?
+		
+
 
 func apply_item_effect(item):
 	match item["effect"]:

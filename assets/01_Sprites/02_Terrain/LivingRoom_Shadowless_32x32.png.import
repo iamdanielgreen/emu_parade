@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnsty3chrbdkt"
-path="res://.godot/imported/4_Bedroom_32x32.png-5d49415b40f6689d14b55c1987ee759a.ctex"
+uid="uid://6huf370dgs5l"
+path="res://.godot/imported/LivingRoom_Shadowless_32x32.png-ee98e6ee3e85bbe8773dd131bbba55d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/01_Sprites/02_Terrain/4_Bedroom_32x32.png"
-dest_files=["res://.godot/imported/4_Bedroom_32x32.png-5d49415b40f6689d14b55c1987ee759a.ctex"]
+source_file="res://assets/01_Sprites/02_Terrain/LivingRoom_Shadowless_32x32.png"
+dest_files=["res://.godot/imported/LivingRoom_Shadowless_32x32.png-ee98e6ee3e85bbe8773dd131bbba55d6.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var phone_sprite: AnimationPlayer = $AnimationPlayer
-@onready var player: Player = $"../Player"
+@onready var tv_animation: AnimationPlayer = $AnimationPlayer
+@onready var player: Player = $Player
 
 var paused = false
 var player_in_range = false
@@ -23,7 +23,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_item_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		phone_sprite.play("glow")
+		pass
+		#TV GLOW
+		#phone_sprite.play("glow")
 		
 func _on_interact_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -37,14 +39,18 @@ func _on_interact_zone_body_exited(body: Node2D) -> void:
 
 func _on_item_zone_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		phone_sprite.play("idle")
+		pass
+		#REMOVE TV GLOW
+		#phone_sprite.play("idle")
 
 func random_phone():
 	Dialogic.timeline_ended.connect(dialogue_end) #Tutorial says "ended_dialogue" instead.
 	#var dialogue_line = randi_range(0,3) 
 	#Dialogic.start("random_" + str(dialogue_line))
 	var dialogue_line = randi_range(0,3) 
+	#CHANGE FOR TV CHANNEL
 	Dialogic.start("random_phone_" + str(dialogue_line))
+	#RANDOMISE SPRITE SHOW AS WELL
 	
 func dialogue_end():
 	Dialogic.timeline_ended.disconnect(dialogue_end)

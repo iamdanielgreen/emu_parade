@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ta4py4dfavpi"
-path="res://.godot/imported/animated_TV_reportage_hospital_32x32.png-8367b76336ae4ef288550a642d390343.ctex"
+uid="uid://dqvmsi0ntde8k"
+path="res://.godot/imported/Basement_Shadowless_32x32.png-34427b30a4f9576bb3e4ffec94a98033.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/01_Sprites/02_Terrain/TV News/animated_TV_reportage_hospital_32x32.png"
-dest_files=["res://.godot/imported/animated_TV_reportage_hospital_32x32.png-8367b76336ae4ef288550a642d390343.ctex"]
+source_file="res://assets/01_Sprites/02_Terrain/Basement_Shadowless_32x32.png"
+dest_files=["res://.godot/imported/Basement_Shadowless_32x32.png-34427b30a4f9576bb3e4ffec94a98033.ctex"]
 
 [params]
 
