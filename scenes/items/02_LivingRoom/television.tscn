@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://8mm2ljbyhroa"]
+[gd_scene load_steps=10 format=3 uid="uid://8mm2ljbyhroa"]
 
 [ext_resource type="Script" uid="uid://8s362b3h5bq2" path="res://scripts/items/02_LivingRoom/television.gd" id="1_lqin8"]
 [ext_resource type="Texture2D" uid="uid://bsht018bu784d" path="res://assets/01_Sprites/03_Items/02_LivingRoom/tv_spritesheet.png" id="2_lqin8"]
+[ext_resource type="Texture2D" uid="uid://dcljhq1q1xxh1" path="res://assets/01_Sprites/05_Other/interact_icon.png" id="3_8we4y"]
 
 [sub_resource type="Animation" id="Animation_b5ov6"]
 length = 0.001
@@ -30,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_1n8gy"]
@@ -55,14 +56,13 @@ _data = {
 &"idle": SubResource("Animation_1n8gy")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k4e56"]
-radius = 131.436
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqin8"]
+size = Vector2(200, 405)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b5ov6"]
-radius = 67.2036
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8we4y"]
+size = Vector2(198, 160)
 
 [node name="television" type="Node2D"]
-scale = Vector2(0.7, 0.7)
 script = ExtResource("1_lqin8")
 
 [node name="tv_sprite" type="Sprite2D" parent="."]
@@ -75,16 +75,23 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="InteractIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -29)
+texture = ExtResource("3_8we4y")
+
 [node name="ItemZone" type="Area2D" parent="."]
 
 [node name="ItemZone" type="CollisionShape2D" parent="ItemZone"]
-shape = SubResource("CircleShape2D_k4e56")
+position = Vector2(-1.5, 177.625)
+shape = SubResource("RectangleShape2D_lqin8")
 debug_color = Color(1, 1, 0, 0.419608)
 
 [node name="InteractZone" type="Area2D" parent="."]
 
 [node name="InteractZone" type="CollisionShape2D" parent="InteractZone"]
-shape = SubResource("CircleShape2D_b5ov6")
+position = Vector2(-1, 56)
+shape = SubResource("RectangleShape2D_8we4y")
 
 [connection signal="body_entered" from="ItemZone" to="." method="_on_item_zone_body_entered"]
 [connection signal="body_exited" from="ItemZone" to="." method="_on_item_zone_body_exited"]

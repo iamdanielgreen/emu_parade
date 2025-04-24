@@ -14,6 +14,11 @@ var player_awake_bedroom_posy = 390
 
 var game_loadin = true
 
+#GAME OBJECTIVE VARIABLES
+var phone_found = false
+var met_maggie = false
+
+
 #Inventory items
 var inventory = []
 

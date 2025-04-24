@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt8iqaqjwajh2"]
+[gd_scene load_steps=5 format=3 uid="uid://bt8iqaqjwajh2"]
 
 [ext_resource type="Script" uid="uid://qpgjj4540pxt" path="res://scripts/menus/main_menu.gd" id="1_ng0o5"]
 [ext_resource type="FontFile" uid="uid://cu184tq6oycu2" path="res://assets/05_Fonts/KINDGARG.TTF" id="2_8r73w"]
+[ext_resource type="Texture2D" uid="uid://mktss6mka3iw" path="res://assets/01_Sprites/05_Other/EP_survey_QR.png" id="4_6bivr"]
 [ext_resource type="Texture2D" uid="uid://cmwytat56um43" path="res://assets/04_Menu Slides/EP_Menu_TempCredits.png" id="5_ng0o5"]
 
 [node name="Main Menu" type="Control"]
@@ -26,6 +27,17 @@ theme_override_font_sizes/font_size = 225
 text = "EMU PARADE"
 
 [node name="Name_Text" type="Label" parent="TitleScreen/EmuParade_Text"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 218.0
+offset_right = 1281.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("2_8r73w")
+theme_override_font_sizes/font_size = 72
+text = "A game demo by Daniel Green"
+
+[node name="Prototype_Text" type="Label" parent="TitleScreen/EmuParade_Text"]
+visible = false
 layout_mode = 0
 offset_left = 21.0
 offset_top = 218.0
@@ -58,12 +70,11 @@ text = "Credits
 "
 alignment = 0
 
-[node name="Playtest Feedback" type="Button" parent="TitleScreen/MainMenuButtons"]
+[node name="PlaytestFeedback" type="Button" parent="TitleScreen/MainMenuButtons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_8r73w")
 theme_override_font_sizes/font_size = 72
-disabled = true
 text = "Playtest Feedback"
 alignment = 0
 
@@ -76,15 +87,8 @@ theme_override_font_sizes/font_size = 72
 text = "Quit"
 alignment = 0
 
-[node name="BlackBG" type="ColorRect" parent="TitleScreen"]
-z_index = -1
-offset_left = -129.0
-offset_top = -106.0
-offset_right = 2072.0
-offset_bottom = 1205.0
-color = Color(0, 0, 0, 1)
-
 [node name="Credits" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -113,7 +117,57 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="EpSurveyQr" type="Sprite2D" parent="Feedback"]
+position = Vector2(373, 610)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("4_6bivr")
+
+[node name="Feedback_Text" type="Label" parent="Feedback"]
+offset_left = 75.0
+offset_top = 22.0
+offset_right = 1589.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("2_8r73w")
+theme_override_font_sizes/font_size = 150
+text = "Playtest Feedback"
+
+[node name="Survey_Text" type="Label" parent="Feedback/Feedback_Text"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 165.0
+offset_right = 1517.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("2_8r73w")
+theme_override_font_sizes/font_size = 64
+text = "Thank you for playing this demo of Emu Parade.
+You can leave feedback using the QR code below."
+
+[node name="FeedbackBackButton" type="Button" parent="Feedback"]
+z_index = 1
+layout_mode = 2
+offset_left = 96.0
+offset_top = 900.0
+offset_right = 733.0
+offset_bottom = 985.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_8r73w")
+theme_override_font_sizes/font_size = 72
+text = "Back"
+alignment = 0
+
+[node name="FeedbackScreen" type="CanvasLayer" parent="Feedback"]
+
+[node name="BlackBG" type="ColorRect" parent="."]
+z_index = -5
+offset_left = -129.0
+offset_top = -106.0
+offset_right = 2072.0
+offset_bottom = 1205.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="TitleScreen/MainMenuButtons/PlaytestFeedback" to="." method="_on_playtest_feedback_pressed"]
 [connection signal="pressed" from="TitleScreen/MainMenuButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Credits/CreditsBackButton" to="." method="_on_credits_back_button_pressed"]
+[connection signal="pressed" from="Feedback/FeedbackBackButton" to="." method="_on_feedback_back_button_pressed"]

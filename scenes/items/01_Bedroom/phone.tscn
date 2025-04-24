@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfc1o1ie3dtri"]
+[gd_scene load_steps=10 format=3 uid="uid://dfc1o1ie3dtri"]
 
 [ext_resource type="Script" uid="uid://tbq8rsh6dnxc" path="res://scripts/items/01_Bedroom/phone.gd" id="1_1n8gy"]
 [ext_resource type="Texture2D" uid="uid://dykj0qojly86a" path="res://assets/01_Sprites/03_Items/01_Bedroom/phone_spritesheet.png" id="1_xixmg"]
+[ext_resource type="Texture2D" uid="uid://dcljhq1q1xxh1" path="res://assets/01_Sprites/05_Other/interact_icon.png" id="3_b5ov6"]
 
 [sub_resource type="Animation" id="Animation_b5ov6"]
 length = 0.001
@@ -56,7 +57,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4e56"]
-radius = 131.436
+radius = 101.519
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5ov6"]
 radius = 67.2036
@@ -74,6 +75,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_cnyso")
 }
 autoplay = "idle"
+
+[node name="InteractIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -18.4286)
+scale = Vector2(1, 1)
+texture = ExtResource("3_b5ov6")
 
 [node name="ItemZone" type="Area2D" parent="."]
 

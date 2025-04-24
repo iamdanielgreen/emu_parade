@@ -15,6 +15,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	change_scene()
+	if player.paused == true:
+		player.visible = false
 
 func _on_bedroom_level_gate_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

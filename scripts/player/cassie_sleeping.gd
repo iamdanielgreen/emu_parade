@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 		make_bed()
 	elif Input.is_action_pressed("move_up"):
 		make_bed()
-	elif Input.is_action_pressed("move_down"):
-		make_bed()
+	#elif Input.is_action_pressed("move_down"):
+		#make_bed()
 	else:
 		return
 		

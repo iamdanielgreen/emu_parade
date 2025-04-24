@@ -1,8 +1,9 @@
 extends CharacterBody2D
 class_name Player #NOTE: THIS CONNECTS TO THE PAUSE MENU, SO THAT YOU CAN STOP CASSIE MOVING WHEN THE GAME IS PAUSED.
 
-@onready var cassie_sprite = $AnimatedSprite2D
+@onready var cassie_animation = $AnimatedSprite2D
 @onready var interact_ui: CanvasLayer = $InteractUI
+@onready var talk_ui: CanvasLayer = $TalkUI
 @onready var inventory_ui: CanvasLayer = $InventoryUI
 @onready var bed_sleeping: TileMapLayer = $"../TileLayers/Bed/BedSleeping"
 @onready var test_bin: Node2D = $"../TestBin"
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		if GameManager.current_scene == "level_01_bedroom":
 			bed_sleeping.visible = false
 		else:
-			return
+			pass
 	else:
 		visible = false
 	
@@ -36,25 +37,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		# Move as long as the key/button is pressed.
 		position.x += SPEED * delta
-		cassie_sprite.play("Walk_Right")
+		cassie_animation.play("Walk_Right")
 	elif Input.is_action_pressed("move_left"):
 		position.x -= SPEED * delta
-		cassie_sprite.play("Walk_Left")
+		cassie_animation.play("Walk_Left")
 	elif Input.is_action_pressed("move_up"):
 		position.y -= SPEED * delta
-		cassie_sprite.play("Walk_Up")
+		cassie_animation.play("Walk_Up")
 	elif Input.is_action_pressed("move_down"):
 		position.y += SPEED * delta
-		cassie_sprite.play("Walk_Down")
+		cassie_animation.play("Walk_Down")
 	else:
 		if Input.is_action_just_released("move_right"):
-			cassie_sprite.play("Idle_Right")
+			cassie_animation.play("Idle_Right")
 		elif Input.is_action_just_released("move_left"):
-			cassie_sprite.play("Idle_Left")
+			cassie_animation.play("Idle_Left")
 		elif Input.is_action_just_released("move_up"):
-			cassie_sprite.play("Idle_Up")
+			cassie_animation.play("Idle_Up")
 		elif Input.is_action_just_released("move_down"):
-			cassie_sprite.play("Idle")
+			cassie_animation.play("Idle")
 	
 	move_and_collide(velocity * delta)
 	

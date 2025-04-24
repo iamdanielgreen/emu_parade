@@ -17,7 +17,7 @@ Narrative Consultation - Kate Byrne, Stephen Fox
 - - as ONE MORE THING, had cassie load in to living room
 - - - Which worked, except you basically need cassie to have visibility always turned on at the start of a new level because you currently can't see her.
 
-WHEN WAS THE LAST TIME YOU DID A BUILD, BRUH.
+WHEN WAS THE LAST TIME YOU DID A BUILD, BRUH. (Actually, it was 22/04)
 
 19/04/2025
 
@@ -54,4 +54,34 @@ WHEN WAS THE LAST TIME YOU DID A BUILD, BRUH.
 - - finished tv scene
 - - - started to fix script from phone to tv
 
+22/04/2025
+- Continued working on TV- didn't finish this
+- added lots of physics stuff to living room
+- walls, props, etc
 
+Playtest Notes with Kate - 23/04/2025
+
+- Text is very small
+- Fix bedroom physics
+- Cassie needs to be in front of the TV
+- - move table, more boxes
+- Remove / fix playtest end screen so cassie can go outside
+- Have Cassie wonder where her phone is
+- No physics outside
+- Fix Cassie's house position
+- Make UI prompts more prominent, at least in middle of screen
+- Can trigger phone from bed?
+- - Invisible Cassie can. Make glow zone smaller.
+- Have Cassie wake up on left of bed.
+- Green grocer boxes don't scan as moving boxes
+- Prioritise larger spaces on the street, as that's ultimately where the action is
+- - You understand the trope(s) you're referring to, but that doesn't necessarily translate to others - nor have your designed it to be.
+- Have something in the kitchen to interact with if there's time.
+- "The feel is quite charming."
+- "The dialogue with Maggie is nice."
+
+24/04/2025 (well, it's 00:26 so that's technically true)
+- you made the UI prompt disappear when you want it to, but you still need an interaction icon because the glow isn't enough
+- - there is *something* about adding said icon through Godot that really is causing problems. You might need to edit the sprite itself.
+- UI prompt also doesn't appear with TV depending on whether or not you find the phone
+- Added test icon to phone. Not perfect, but it works.

@@ -24,17 +24,30 @@ LevelManager="*res://scripts/levels/level_manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"aviary": "res://assets/02_Dialogic Files/02_Characters/aviary.dch",
 "cassie": "res://assets/02_Dialogic Files/02_Characters/cassie.dch",
 "feedr": "res://assets/02_Dialogic Files/02_Characters/feedr.dch",
+"maggie": "res://assets/02_Dialogic Files/02_Characters/maggie.dch",
 "narrator": "res://assets/02_Dialogic Files/02_Characters/narrator.dch",
 "other_worker": "res://assets/02_Dialogic Files/02_Characters/other_worker.dch",
 "phone": "res://assets/02_Dialogic Files/02_Characters/phone.dch",
+"roost": "res://assets/02_Dialogic Files/02_Characters/roost.dch",
 "signet": "res://assets/02_Dialogic Files/02_Characters/signet.dch",
-"worker": "res://assets/02_Dialogic Files/02_Characters/worker.dch"
+"squawk": "res://assets/02_Dialogic Files/02_Characters/squawk.dch",
+"worker": "res://assets/02_Dialogic Files/02_Characters/worker.dch",
+"worker_lou": "res://assets/02_Dialogic Files/02_Characters/worker_lou.dch"
 }
 directories/dtl_directory={
 "01_01_PhoneAlarm": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/01_01_PhoneAlarm.dtl",
 "01_02_DadMessage": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/01_02_DadMessage.dtl",
+"03_02_lou_random_1": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/02_Lous/03_02_lou_random_1.dtl",
+"03_02_lou_random_2": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/02_Lous/03_02_lou_random_2.dtl",
+"03_02_meet_lou": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/02_Lous/03_02_meet_lou.dtl",
+"03_maggie01_meet_maggie": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/01_Maggie/03_maggie01_meet_maggie.dtl",
+"03_maggie02_demoend": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/01_Maggie/03_maggie02_demoend.dtl",
+"03_maggie_bonus_1": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/01_Maggie/03_maggie_bonus_1.dtl",
+"03_maggie_bonus_2": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/01_Maggie/03_maggie_bonus_2.dtl",
+"03_maggie_bonus_3": "res://assets/02_Dialogic Files/01_Timelines/03_EmuParade/01_Maggie/03_maggie_bonus_3.dtl",
 "meet_bob": "res://assets/02_Dialogic Files/01_Timelines/other_worker/meet_bob.dtl",
 "random_0": "res://assets/02_Dialogic Files/01_Timelines/other_worker/random_0.dtl",
 "random_1": "res://assets/02_Dialogic Files/01_Timelines/other_worker/random_1.dtl",
@@ -45,6 +58,12 @@ directories/dtl_directory={
 "random_phone_3": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/random_phone_3.dtl",
 "random_phone_4": "res://assets/02_Dialogic Files/01_Timelines/01_Bedroom/random_phone_4.dtl",
 "tutorial_timeline": "res://assets/02_Dialogic Files/tutorial_timeline.dtl",
+"tv_channel_1": "res://assets/02_Dialogic Files/01_Timelines/02_LivingRoom/tv_channel_1.dtl",
+"tv_channel_2": "res://assets/02_Dialogic Files/01_Timelines/02_LivingRoom/tv_channel_2.dtl",
+"tv_channel_3": "res://assets/02_Dialogic Files/01_Timelines/02_LivingRoom/tv_channel_3.dtl",
+"tv_channel_4": "res://assets/02_Dialogic Files/01_Timelines/02_LivingRoom/tv_channel_4.dtl",
+"tv_channel_5": "res://assets/02_Dialogic Files/01_Timelines/02_LivingRoom/tv_channel_5.dtl",
+"tv_channel_6": "res://assets/02_Dialogic Files/01_Timelines/02_LivingRoom/tv_channel_6.dtl",
 "worker": "res://assets/02_Dialogic Files/01_Timelines/worker.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -83,10 +102,11 @@ audio/channel_defaults={
 variables={
 "response": ""
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://assets/02_Dialogic Files/03_Style/EmuParade_DL_style.tres"]
+layout/default_style="res://assets/02_Dialogic Files/03_Style/EmuParade_DL_style.tres"
 glossary/default_case_sensitive=false
 glossary/glossary_files=["res://assets/02_Dialogic Files/04_Glossaries/emu_parade_glossary.tres"]
+text/input_action="dialogic_default_action"
 
 [display]
 

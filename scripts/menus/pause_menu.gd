@@ -21,6 +21,10 @@ func pauseMenu():
 		pause_menu.show()
 		resume_button.grab_focus()
 		player.paused = true
+		#if GameManager.current_scene == "level_01_bedroom":
+			#player.visible = false
+		#else:
+			#pass
 		get_tree().paused = true
 		
 	paused = !paused #TODO: Someone needs to explain to you what this means. 
