@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwytat56um43"
-path="res://.godot/imported/EP_Menu_TempCredits.png-762f4c9d09e718f21179557abbdf6074.ctex"
+uid="uid://cucbnuahjike3"
+path="res://.godot/imported/Louise.png-31bf5fe59eb53d7afd544fbafd22a93c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/04_Menu Slides/EP_Menu_TempCredits.png"
-dest_files=["res://.godot/imported/EP_Menu_TempCredits.png-762f4c9d09e718f21179557abbdf6074.ctex"]
+source_file="res://assets/01_Sprites/01_Characters/Lous/Louise.png"
+dest_files=["res://.godot/imported/Louise.png-31bf5fe59eb53d7afd544fbafd22a93c.ctex"]
 
 [params]
 

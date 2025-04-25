@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://br5ivsmaiwfrf"]
+
+[ext_resource type="Script" uid="uid://bdueo6pwh8l80" path="res://scripts/NPCs/robin.gd" id="1_udwsn"]
+[ext_resource type="Texture2D" uid="uid://sknpspmw1rqf" path="res://assets/01_Sprites/01_Characters/Robin/Robin.png" id="2_udwsn"]
+[ext_resource type="Texture2D" uid="uid://cfqcrnogt5vg5" path="res://assets/01_Sprites/05_Other/talk_icon.png" id="3_rxpnf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37hyv"]
+atlas = ExtResource("2_udwsn")
+region = Rect2(576, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxpnf"]
+atlas = ExtResource("2_udwsn")
+region = Rect2(608, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejphw"]
+atlas = ExtResource("2_udwsn")
+region = Rect2(640, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvlkw"]
+atlas = ExtResource("2_udwsn")
+region = Rect2(672, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6tob"]
+atlas = ExtResource("2_udwsn")
+region = Rect2(704, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ank0l"]
+atlas = ExtResource("2_udwsn")
+region = Rect2(736, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qis5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37hyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxpnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejphw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvlkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6tob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ank0l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54lhc"]
+size = Vector2(32, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfdoy"]
+radius = 40.0125
+
+[node name="Robin" type="CharacterBody2D"]
+script = ExtResource("1_udwsn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4qis5")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.92953
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_54lhc")
+
+[node name="InteractZone" type="Area2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/InteractZone"]
+shape = SubResource("CircleShape2D_bfdoy")
+
+[node name="TalkIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -23)
+texture = ExtResource("3_rxpnf")
+
+[connection signal="body_entered" from="CollisionShape2D/InteractZone" to="." method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="CollisionShape2D/InteractZone" to="." method="_on_interact_zone_body_exited"]

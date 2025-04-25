@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 var player_in_range = false
 var met_lou = false
+var lou_test = false
 
 func _process(delta):
 	if player_in_range and Input.is_action_pressed("action"):
@@ -15,11 +16,11 @@ func _process(delta):
 			talk_icon.hide()
 			Dialogic.start("03_02_meet_lou")
 			met_lou = true
-		else:
+		else: 
 			if Dialogic.current_timeline == null and met_lou:
 				random_lou()
-				
-		
+			
+
 
 func _physics_process(delta: float) -> void:
 	other_worker.play("Idle")

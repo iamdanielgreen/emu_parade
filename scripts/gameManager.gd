@@ -15,9 +15,16 @@ var player_awake_bedroom_posy = 390
 var game_loadin = true
 
 #GAME OBJECTIVE VARIABLES
+var met_THATONE = false #NOTE: PURELY FOR TESTING
 var phone_found = false
 var met_maggie = false
-
+var met_robin = false
+var helped_robin = false
+var met_wren = false
+var met_cookie = false
+var maggie_endgame = false
+var met_louise = false
+var found_sock = false
 
 #Inventory items
 var inventory = []
