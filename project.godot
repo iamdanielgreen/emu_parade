@@ -119,6 +119,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="01_Emu Parade Project"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/iamda/Documents/00_Projects/2025/01_Games/02_Emu Parade/05_Ephemera/Playthrough Video/EmuParade_Test_Playthrough_Video.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
