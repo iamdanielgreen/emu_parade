@@ -91,41 +91,44 @@ alignment = 0
 [node name="Credits" type="Control" parent="."]
 visible = false
 anchors_preset = 0
+offset_top = 6.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 46.0
 
 [node name="GameTitle_Text" type="Label" parent="Credits"]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 2.0
-offset_right = 1590.0
-offset_bottom = 163.0
+offset_right = 925.0
+offset_bottom = 136.0
 theme_override_fonts/font = ExtResource("2_8r73w")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 125
 text = "EMU PARADE"
 vertical_alignment = 1
 
 [node name="Name_Text" type="Label" parent="Credits/GameTitle_Text"]
 layout_mode = 0
 offset_left = 17.0
-offset_top = 146.0
+offset_top = 122.0
 offset_right = 579.0
-offset_bottom = 197.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("2_8r73w")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "A game by Daniel Green"
 
 [node name="Credits_Text" type="Label" parent="Credits/GameTitle_Text"]
 layout_mode = 0
 offset_left = 17.0
-offset_top = 202.0
+offset_top = 162.0
 offset_right = 1844.0
-offset_bottom = 809.0
+offset_bottom = 973.0
 theme_override_fonts/font = ExtResource("2_8r73w")
 theme_override_font_sizes/font_size = 32
 text = "
 Audio, Game Design, Narrative and Dialogue:
 Daniel Green
+
+Contains an excerpt of \"The Perfect Hostess\" (Methuen & Co, 1931) by Rose Henniker Heaton
 
 Narrative Consultation:
 Kate Byrne, Stephen Fox
@@ -147,10 +150,10 @@ Arthur Morris, Nick Murray, and the good people of Sly-Tone Cafe
 [node name="CreditsBackButton" type="Button" parent="Credits"]
 z_index = 1
 layout_mode = 2
-offset_left = 93.0
-offset_top = 940.0
-offset_right = 730.0
-offset_bottom = 1025.0
+offset_left = 92.0
+offset_top = 968.0
+offset_right = 729.0
+offset_bottom = 1053.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_8r73w")
 theme_override_font_sizes/font_size = 72

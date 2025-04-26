@@ -1,126 +1,85 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwu5ght5dpdp4"]
+[gd_scene load_steps=13 format=3 uid="uid://dwu5ght5dpdp4"]
 
-[ext_resource type="Texture2D" uid="uid://dpw7ympjf3xl8" path="res://assets/01_Sprites/01_Characters/Maggie/Maggie.png" id="1_6vkli"]
+[ext_resource type="Texture2D" uid="uid://4uiu7ytcqdqo" path="res://assets/01_Sprites/01_Characters/Maggie/Maggie_Endgame.png" id="1_6vkli"]
+[ext_resource type="Script" uid="uid://dxmd8gnuuuyf0" path="res://scripts/NPCs/maggie_endgame.gd" id="1_dkopo"]
 [ext_resource type="Texture2D" uid="uid://cfqcrnogt5vg5" path="res://assets/01_Sprites/05_Other/talk_icon.png" id="2_dkopo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgc5f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkopo"]
 atlas = ExtResource("1_6vkli")
 region = Rect2(576, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1nd0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcjjj"]
 atlas = ExtResource("1_6vkli")
 region = Rect2(608, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrljk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej1eu"]
 atlas = ExtResource("1_6vkli")
 region = Rect2(640, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gogh6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhrvd"]
 atlas = ExtResource("1_6vkli")
 region = Rect2(672, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h5im5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypkah"]
 atlas = ExtResource("1_6vkli")
 region = Rect2(704, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ylpnt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dyoy"]
 atlas = ExtResource("1_6vkli")
 region = Rect2(736, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfw1w"]
-atlas = ExtResource("1_6vkli")
-region = Rect2(192, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1rbt"]
-atlas = ExtResource("1_6vkli")
-region = Rect2(224, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61lp7"]
-atlas = ExtResource("1_6vkli")
-region = Rect2(256, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ljjy"]
-atlas = ExtResource("1_6vkli")
-region = Rect2(288, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pprpf"]
-atlas = ExtResource("1_6vkli")
-region = Rect2(320, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_plvhn"]
-atlas = ExtResource("1_6vkli")
-region = Rect2(352, 64, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4qis5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgc5f")
+"texture": SubResource("AtlasTexture_dkopo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i1nd0")
+"texture": SubResource("AtlasTexture_pcjjj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vrljk")
+"texture": SubResource("AtlasTexture_ej1eu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gogh6")
+"texture": SubResource("AtlasTexture_dhrvd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h5im5")
+"texture": SubResource("AtlasTexture_ypkah")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ylpnt")
+"texture": SubResource("AtlasTexture_5dyoy")
 }],
 "loop": true,
-"name": &"Idle_Talking",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rfw1w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w1rbt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61lp7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ljjy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pprpf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_plvhn")
-}],
-"loop": false,
-"name": &"Idle_Up",
+"name": &"Idle",
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54lhc"]
-size = Vector2(32, 46)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkopo"]
+radius = 14.0
+height = 38.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bfdoy"]
-radius = 40.0125
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcjjj"]
+radius = 28.0
+height = 72.0
 
 [node name="Maggie_Endgame" type="CharacterBody2D"]
+script = ExtResource("1_dkopo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4qis5")
-animation = &"Idle_Up"
-autoplay = "Idle_Up"
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.926224
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_54lhc")
+shape = SubResource("CapsuleShape2D_dkopo")
 
 [node name="InteractZone" type="Area2D" parent="CollisionShape2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/InteractZone"]
-shape = SubResource("CircleShape2D_bfdoy")
+shape = SubResource("CapsuleShape2D_pcjjj")
+debug_color = Color(1, 1, 0, 0.419608)
 
 [node name="TalkIcon" type="Sprite2D" parent="."]
 visible = false

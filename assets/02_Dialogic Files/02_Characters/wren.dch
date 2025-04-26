@@ -1,0 +1,19 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.6, 0.4, 0.4, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "",
+&"description": "Wren works for the council as a gardener. They're Robin's partner, and you have their sandwich.",
+&"display_name": "Wren",
+&"mirror": false,
+&"nicknames": ["wren"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}

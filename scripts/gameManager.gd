@@ -21,8 +21,10 @@ var met_maggie = false
 var met_robin = false
 var helped_robin = false
 var met_wren = false
+var got_mail = false
 var met_cookie = false
 var maggie_endgame = false
+var grow_garden = false
 var met_louise = false
 var found_sock = false
 

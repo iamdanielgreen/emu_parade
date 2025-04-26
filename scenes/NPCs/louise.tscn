@@ -1,102 +1,56 @@
-[gd_scene load_steps=18 format=3 uid="uid://drf82yf4ij4ea"]
+[gd_scene load_steps=13 format=3 uid="uid://drf82yf4ij4ea"]
 
-[ext_resource type="Texture2D" uid="uid://dpw7ympjf3xl8" path="res://assets/01_Sprites/01_Characters/Maggie/Maggie.png" id="1_0mqdn"]
+[ext_resource type="Texture2D" uid="uid://cucbnuahjike3" path="res://assets/01_Sprites/01_Characters/Lous/Louise.png" id="1_0mqdn"]
+[ext_resource type="Script" uid="uid://dtex2r4yey1qx" path="res://scripts/NPCs/louise.gd" id="1_g1ck0"]
 [ext_resource type="Texture2D" uid="uid://cfqcrnogt5vg5" path="res://assets/01_Sprites/05_Other/talk_icon.png" id="2_g1ck0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgc5f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1ck0"]
 atlas = ExtResource("1_0mqdn")
 region = Rect2(576, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i1nd0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuhv6"]
 atlas = ExtResource("1_0mqdn")
 region = Rect2(608, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrljk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggtbx"]
 atlas = ExtResource("1_0mqdn")
 region = Rect2(640, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gogh6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_skhnx"]
 atlas = ExtResource("1_0mqdn")
 region = Rect2(672, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h5im5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmt1q"]
 atlas = ExtResource("1_0mqdn")
 region = Rect2(704, 64, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ylpnt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ngty"]
 atlas = ExtResource("1_0mqdn")
 region = Rect2(736, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfw1w"]
-atlas = ExtResource("1_0mqdn")
-region = Rect2(192, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w1rbt"]
-atlas = ExtResource("1_0mqdn")
-region = Rect2(224, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61lp7"]
-atlas = ExtResource("1_0mqdn")
-region = Rect2(256, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ljjy"]
-atlas = ExtResource("1_0mqdn")
-region = Rect2(288, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pprpf"]
-atlas = ExtResource("1_0mqdn")
-region = Rect2(320, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_plvhn"]
-atlas = ExtResource("1_0mqdn")
-region = Rect2(352, 64, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4qis5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgc5f")
+"texture": SubResource("AtlasTexture_g1ck0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i1nd0")
+"texture": SubResource("AtlasTexture_xuhv6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vrljk")
+"texture": SubResource("AtlasTexture_ggtbx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gogh6")
+"texture": SubResource("AtlasTexture_skhnx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h5im5")
+"texture": SubResource("AtlasTexture_dmt1q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ylpnt")
+"texture": SubResource("AtlasTexture_3ngty")
 }],
 "loop": true,
-"name": &"Idle_Talking",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rfw1w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w1rbt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61lp7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ljjy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pprpf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_plvhn")
-}],
-"loop": false,
-"name": &"Idle_Up",
+"name": &"Idle",
 "speed": 8.0
 }]
 
@@ -107,11 +61,14 @@ size = Vector2(32, 46)
 radius = 40.0125
 
 [node name="Louise" type="CharacterBody2D"]
+script = ExtResource("1_g1ck0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4qis5")
-animation = &"Idle_Up"
-autoplay = "Idle_Up"
+animation = &"Idle"
+autoplay = "Idle"
+frame = 5
+frame_progress = 0.92357
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -124,7 +81,8 @@ shape = SubResource("CircleShape2D_bfdoy")
 
 [node name="TalkIcon" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -23)
+z_index = 9
+position = Vector2(1, -9)
 texture = ExtResource("2_g1ck0")
 
 [connection signal="body_entered" from="CollisionShape2D/InteractZone" to="." method="_on_interact_zone_body_entered"]

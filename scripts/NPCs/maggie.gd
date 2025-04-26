@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var other_worker = $AnimatedSprite2D
+
 @onready var maggie_animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: Player = $"../../Player"
 @onready var talk_icon: Sprite2D = $TalkIcon
@@ -15,17 +15,17 @@ func _process(delta):
 			talk_icon.hide()
 			player.talk_ui.visible = false
 			Dialogic.start("03_maggie01_meet_maggie")
-			met_maggie = true
 			GameManager.met_maggie = true
-			GameManager.helped_robin = true # TODO: DELETE AFTER TESTING
-		else:
-			if Dialogic.current_timeline == null and met_maggie:
-				if persistent_player == true:
-					maggie_bonus()
-				else:
-					talk_icon.hide()
-					Dialogic.start("03_maggie02_demoend")
-					persistent_player = true
+	else:
+			player.talk_ui.visible = false
+			return
+			#if Dialogic.current_timeline == null and met_maggie:
+				#if persistent_player == true:
+					#maggie_bonus()
+				#else:
+					#talk_icon.hide()
+					##Dialogic.start("03_maggie02_demoend")
+					#persistent_player = true
 
 
 
