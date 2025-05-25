@@ -12,7 +12,7 @@ func _ready() -> void:
 	start_button.grab_focus()	
 
 func _on_start_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/wip_slide.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level_01_bedroom.tscn")
 	
 func _on_credits_pressed() -> void:
 	$"TitleScreen".hide()

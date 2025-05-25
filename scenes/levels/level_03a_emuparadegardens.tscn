@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dtgbtfvj2jdm1"]
+[gd_scene load_steps=15 format=4 uid="uid://dtgbtfvj2jdm1"]
 
 [ext_resource type="Script" uid="uid://dd1oam3dqs0hx" path="res://scripts/levels/level_03_emuparade.gd" id="1_41p73"]
 [ext_resource type="TileSet" uid="uid://birsrkpuijpfy" path="res://assets/01_Sprites/04_TileSets/Exteriors.tres" id="2_tvwuf"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://drf82yf4ij4ea" path="res://scenes/NPCs/louise.tscn" id="10_6yjw8"]
 [ext_resource type="PackedScene" uid="uid://dwu5ght5dpdp4" path="res://scenes/NPCs/maggie_endgame.tscn" id="11_js71l"]
 [ext_resource type="Texture2D" uid="uid://dcljhq1q1xxh1" path="res://assets/01_Sprites/05_Other/interact_icon.png" id="12_a72p6"]
+[ext_resource type="AudioStream" uid="uid://pey7f1r60vgv" path="res://assets/03_Audio/01_Music/EmuParade_02_WelcomeToEmuParade.wav" id="13_31ueq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjby2"]
 size = Vector2(71, 87)
@@ -154,6 +155,10 @@ shape = SubResource("RectangleShape2D_hjby2")
 visible = false
 position = Vector2(37, -22)
 texture = ExtResource("12_a72p6")
+
+[node name="Music_WelcomeToEmuParade" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_31ueq")
+autoplay = true
 
 [connection signal="body_entered" from="MaggieDoor" to="." method="_on_maggie_door_body_entered"]
 [connection signal="body_exited" from="MaggieDoor" to="." method="_on_maggie_door_body_exited"]

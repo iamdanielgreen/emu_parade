@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dqofmgt5j3dj8"]
+[gd_scene load_steps=13 format=4 uid="uid://dqofmgt5j3dj8"]
 
 [ext_resource type="Texture2D" uid="uid://jg2kvk57pdil" path="res://assets/01_Sprites/02_Terrain/VoidTile.png" id="1_kywu7"]
 [ext_resource type="Script" uid="uid://cwkgyplsadj3x" path="res://scripts/levels/level_02_livingroom.gd" id="1_q02rn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxplswnb6dvd1" path="res://scenes/player/player.tscn" id="3_nm15s"]
 [ext_resource type="PackedScene" uid="uid://8mm2ljbyhroa" path="res://scenes/items/02_LivingRoom/television.tscn" id="5_1abak"]
 [ext_resource type="PackedScene" uid="uid://bl8hukdlbh61f" path="res://scenes/menus/pause_menu.tscn" id="6_bhn00"]
+[ext_resource type="AudioStream" uid="uid://rwasurv84u05" path="res://assets/03_Audio/01_Music/EmuParade_01_IsCassieSleeping.wav" id="7_soomq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q02rn"]
 texture = ExtResource("1_kywu7")
@@ -115,5 +116,10 @@ scale = Vector2(0.75, 0.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaytestEndGate"]
 shape = SubResource("RectangleShape2D_bhn00")
+
+[node name="Music_IsCassieSleeping" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_soomq")
+autoplay = true
+bus = &"Track01"
 
 [connection signal="body_entered" from="PlaytestEndGate" to="." method="_on_playtest_end_gate_body_entered"]
